@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FFSignatureFile xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" Version="1778056160" DateCreated="2026-05-06T08:29:20+00:00">
+  <InternalSignatureCollection>
+  <InternalSignature ID="1" Specificity="Specific">
+  <ByteSequence>
+    <SubSequence MinFragLength="0" Position="1" SubSeqMinOffset="0">
+      <Sequence>514C616253686F727456657273696F6E537472696E67</Sequence>
+      <DefaultShift>23</DefaultShift>
+      <Shift Byte="51">22</Shift>
+      <Shift Byte="4C">21</Shift>
+      <Shift Byte="61">20</Shift>
+      <Shift Byte="62">19</Shift>
+      <Shift Byte="53">6</Shift>
+      <Shift Byte="68">17</Shift>
+      <Shift Byte="6F">8</Shift>
+      <Shift Byte="72">4</Shift>
+      <Shift Byte="74">5</Shift>
+      <Shift Byte="56">13</Shift>
+      <Shift Byte="65">12</Shift>
+      <Shift Byte="73">10</Shift>
+      <Shift Byte="69">3</Shift>
+      <Shift Byte="6E">2</Shift>
+      <Shift Byte="67">1</Shift>
+    </SubSequence>
+  </ByteSequence>
+  <ByteSequence Reference="BOFoffset">
+    <SubSequence MinFragLength="0" Position="1" SubSeqMaxOffset="0" SubSeqMinOffset="0">
+      <Sequence>62706C6973743030</Sequence>
+      <DefaultShift>9</DefaultShift>
+      <Shift Byte="62">8</Shift>
+      <Shift Byte="70">7</Shift>
+      <Shift Byte="6C">6</Shift>
+      <Shift Byte="69">5</Shift>
+      <Shift Byte="73">4</Shift>
+      <Shift Byte="74">3</Shift>
+      <Shift Byte="30">1</Shift>
+    </SubSequence>
+  </ByteSequence>
+</InternalSignature>
+</InternalSignatureCollection>
+<FileFormatCollection>
+  <FileFormat ID="1" Name="QLab" PUID="dev/2" Version="" MIMEType="">
+    <InternalSignatureID>1</InternalSignatureID>
+	<Extension>cues</Extension>
+	<Extension>qlab4</Extension>
+	<Extension>qlab5</Extension>
+  </FileFormat>
+</FileFormatCollection></FFSignatureFile>
