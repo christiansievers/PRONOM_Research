@@ -3,34 +3,34 @@ VERSION:2.0
 PRODID:-//ical.marudot.com//iCal Event Maker
 CALSCALE:GREGORIAN
 BEGIN:VTIMEZONE
-TZID:Europe/Berlin
+TZID:Europe/London
 LAST-MODIFIED:20201011T015911Z
-TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Berlin
-X-LIC-LOCATION:Europe/Berlin
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/London
+X-LIC-LOCATION:Europe/London
 BEGIN:DAYLIGHT
-TZNAME:CEST
-TZOFFSETFROM:+0100
-TZOFFSETTO:+0200
-DTSTART:19700329T020000
+TZNAME:BST
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+DTSTART:19700329T010000
 RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
 END:DAYLIGHT
 BEGIN:STANDARD
-TZNAME:CET
-TZOFFSETFROM:+0200
-TZOFFSETTO:+0100
-DTSTART:19701025T030000
+TZNAME:GMT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+DTSTART:19701025T020000
 RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-DTSTAMP:20230525T132628Z
-UID:1685020209944-67834@ical.marudot.com
-DTSTART;TZID=Europe/Berlin:20230525T080000
-RRULE:FREQ=MONTHLY;BYDAY=-1TH
-DTEND;TZID=Europe/Berlin:20230525T090000
-SUMMARY:PRONOM Drop-in Session (Australasia)
-URL:https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDIzODI0M2YtZWQ5ZS00NjgyLWIwODMtYTljOWUzMTI1Yjlk%40thread.v2/0?context=%7b%22Tid%22%3a%22f99512c1-fd9f-4475-9896-9a0b3cdc50ec%22%2c%22Oid%22%3a%22e02319b9-2b3a-4408-86ee-7cd0ba62ed9f%22%7d
-DESCRIPTION:The PRONOM team would also like to share details of their PRONOM drop-in sessions. These are open/unstructured sessions with members of the PRONOM Team to talk about your current research and ask/answer any questions you may have. \n\nhttps://teams.microsoft.com/l/meetup-join/19%3ameeting_MDIzODI0M2YtZWQ5ZS00NjgyLWIwODMtYTljOWUzMTI1Yjlk%40thread.v2/0?context=%7b%22Tid%22%3a%22f99512c1-fd9f-4475-9896-9a0b3cdc50ec%22%2c%22Oid%22%3a%22e02319b9-2b3a-4408-86ee-7cd0ba62ed9f%22%7d \n\n
-LOCATION:Online
+DTSTAMP:20240601T090000Z
+UID:pronom-dropin-uk-2024@example.com
+DTSTART;TZID=Europe/London:20240626T070000
+DTEND;TZID=Europe/London:20240626T080000
+RRULE:FREQ=MONTHLY;BYDAY=-1WE
+SUMMARY:PRONOM Open Drop-In (UK/Europe)
+URL:https://teams.microsoft.com/meet/360447828366458?p=p7yEXEQabP2g8aKB3q
+DESCRIPTION:PRONOM Open Drop-In is an open/unstructured session with members of the PRONOM Team to talk about your current research and ask/answer any questions you may have, and support you with file format queries.\n\nTeams meeting link:\nhttps://teams.microsoft.com/meet/360447828366458?p=p7yEXEQabP2g8aKB3q
+LOCATION:Online (Microsoft Teams)
 END:VEVENT
 END:VCALENDAR
