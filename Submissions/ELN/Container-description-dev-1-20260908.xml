@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContainerSignatureMapping SchemaVersion="1.0" SignatureVersion="1788511934">
+ 
+ <ContainerSignatures>
+  <ContainerSignature Id="1000" ContainerType="ZIP">
+   <Description>Electronic Laboratory Notebook (ELN) Format</Description>
+   <Files>
+    <File>
+     <Path>ro-crate-metadata.json</Path>
+     <BinarySignatures>
+      <InternalSignatureCollection>
+       <InternalSignature ID="300">
+        <ByteSequence Reference="BOFoffset">
+            <SubSequence MinFragLength="11.5" Position="1" SubSeqMaxOffset="32" SubSeqMinOffset="9">
+          <Sequence>'https://w3id.org/ro/crate/'</Sequence>
+         </SubSequence>
+        </ByteSequence>
+       </InternalSignature>
+       <!-- one of the example files (examples/elabftw/export.eln) contains https:\/\/w3id.org\/ro\/crate\/ -->
+       <!-- <InternalSignature ID="301" Specificity="Specific">
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+         <Sequence>74 74 70 73 3a 5c 2f 5c 2f 77 33 69 64 2e 6f 72 67 5c 2f 72 6f 5c 2f 63 72 61 74 65 5c 2f</Sequence>
+         </SubSequence>
+        </ByteSequence>
+        </InternalSignature> -->
+      </InternalSignatureCollection>
+     </BinarySignatures>
+    </File>
+   </Files>
+  </ContainerSignature>
+ </ContainerSignatures>
+
+ <FileFormatMappings>
+  <FileFormatMapping signatureId="1000" Puid="dev/1"></FileFormatMapping>
+ </FileFormatMappings>
+
+ <TriggerPuids>
+  <TriggerPuid ContainerType="OLE2" Puid="fmt/111"></TriggerPuid>
+  <TriggerPuid ContainerType="ZIP" Puid="fmt/189"></TriggerPuid>
+  <TriggerPuid ContainerType="ZIP" Puid="x-fmt/263"></TriggerPuid>
+ </TriggerPuids>
+</ContainerSignatureMapping>
