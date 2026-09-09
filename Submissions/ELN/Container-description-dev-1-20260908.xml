@@ -6,7 +6,7 @@
    <Description>Electronic Laboratory Notebook (ELN) Format</Description>
    <Files>
     <File>
-     <Path>ro-crate-metadata.json</Path>
+     <Path>*/ro-crate-metadata.json</Path>
      <BinarySignatures>
       <InternalSignatureCollection>
        <InternalSignature ID="300">

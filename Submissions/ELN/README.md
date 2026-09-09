@@ -9,6 +9,10 @@ Electronic Laboratory Notebook (ELN)
 
 n/a
 
+**PUID**
+
+new format
+
 **Extensions**
 
 `eln`
@@ -47,7 +51,7 @@ The file format is supported by a variety of applications, see the ELN specifica
    <Description>Electronic Laboratory Notebook (ELN) Format</Description>
    <Files>
     <File>
-     <Path>ro-crate-metadata.json</Path>
+     <Path>*/ro-crate-metadata.json</Path>
      <BinarySignatures>
       <InternalSignatureCollection>
        <InternalSignature ID="300">
@@ -64,9 +68,14 @@ The file format is supported by a variety of applications, see the ELN specifica
   </ContainerSignature>
  ```
  
+- [ ] ==one of the example files (examples/elabftw/export.eln) contains https:\/\/w3id.org\/ro\/crate\/ - remove ByteSequence, so that it only looks for the file? or add anoher ByteSequence?==
+
+- [ ] ==There will be other RO-Crate packages that have been zipped. So the only way to distinguish those from ELN is the extension -> add condition that the file must have the .eln extension?==
+
+
 **Relevant links, documentation, extra information**
 
-Any links to where you found your information, or anything else you think is important not yet covered.
+The ro-crate-metadata.json file is inside a variably named folder. Tyler helped out, suggesting the glob matching solution (see https://github.com/digital-preservation/pronom/issues/10), which seems to work. 
 
 **Credit**
 
