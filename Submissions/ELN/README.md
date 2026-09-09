@@ -68,9 +68,6 @@ The file format is supported by a variety of applications, see the ELN specifica
   </ContainerSignature>
  ```
  
-- [ ] ==one of the example files (examples/elabftw/export.eln) contains https:\/\/w3id.org\/ro\/crate\/ - remove ByteSequence, so that it only looks for the file? or add anoher ByteSequence?==
-
-- [ ] ==There will be other RO-Crate packages that have been zipped. So the only way to distinguish those from ELN is the extension -> add condition that the file must have the .eln extension?==
 
 
 **Relevant links, documentation, extra information**
@@ -80,3 +77,10 @@ The ro-crate-metadata.json file is inside a variably named folder. Tyler helped 
 **Credit**
 
 Landesinitiative LZV.nrw / Hochschulbibliothekszentrum NRW (hbz)
+
+
+# open questions
+
+- [ ] one of the example files (examples/elabftw/export.eln) contains `https:\/\/w3id.org\/ro\/crate\/` --> remove ByteSequence, so that it only looks for the file? or add anoher ByteSequence with this string, i.e. in hex so that it's less troublesome `68 74 74 70 73 3a 5c 2f 5c 2f 77 33 69 64 2e 6f 72 67 5c 2f 72 6f 5c 2f 63 72 61 74 65 5c 2f` ?
+
+- [ ] There will be other RO-Crate packages that have been zipped. So the only way to distinguish those from ELN is the extension -> should we add the condition that the file must have the .eln extension?
