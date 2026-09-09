@@ -2,7 +2,7 @@
 <FFSignatureFile xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" Version="1788511934" DateCreated="2026-09-04T08:52:14+00:00">
 
  <InternalSignatureCollection>
-<!-- don't think I need to define anything here myself. these formats are here so that DROID can recognize the container format, like zip -->
+<!-- these formats are here so that DROID can recognize the container format -->
 
     <InternalSignature ID="170" Specificity="Specific">
             <ByteSequence Reference="BOFoffset">
@@ -99,7 +99,7 @@
 
 <FileFormatCollection>
 
-  <FileFormat ID="1" Name="Development Signature .eln container" PUID="dev/1" Version="1.0" MIMEType="application/vnd.eln+zip">
+  <FileFormat ID="1" Name="Electronic Laboratory Notebook (ELN)" PUID="dev/1" Version="1.0" MIMEType="application/vnd.eln+zip">
      <!-- not sure if I need the below line-->
     <InternalSignatureID>1</InternalSignatureID>
     <Extension>eln</Extension>

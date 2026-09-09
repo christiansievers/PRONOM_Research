@@ -3,7 +3,7 @@
  
  <ContainerSignatures>
   <ContainerSignature Id="1000" ContainerType="ZIP">
-   <Description>Electronic Laboratory Notebook (ELN) Format</Description>
+   <Description>Electronic Laboratory Notebook (ELN)</Description>
    <Files>
     <File>
      <Path>*/ro-crate-metadata.json</Path>
