@@ -3,27 +3,32 @@
  
  <ContainerSignatures>
   <ContainerSignature Id="1000" ContainerType="ZIP">
-   <Description>Electronic Laboratory Notebook (ELN)</Description>
+   <Description>Electronic Laboratory Notebook (ELN) Format</Description>
    <Files>
     <File>
      <Path>*/ro-crate-metadata.json</Path>
      <BinarySignatures>
       <InternalSignatureCollection>
+
+
+<!-- all ro-crate-metadata.json files have this string, ending either on 1.1 or 1.2-->
        <InternalSignature ID="300">
-        <ByteSequence Reference="BOFoffset">
-            <SubSequence MinFragLength="11.5" Position="1" SubSeqMaxOffset="32" SubSeqMinOffset="9">
-          <Sequence>'https://w3id.org/ro/crate/'</Sequence>
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+           <Sequence>'https://w3id.org/ro/crate/1.'(31|32)</Sequence>
          </SubSequence>
         </ByteSequence>
        </InternalSignature>
-       <!-- one of the example files (examples/elabftw/export.eln) contains https:\/\/w3id.org\/ro\/crate\/ -->
-       <!-- <InternalSignature ID="301" Specificity="Specific">
+
+<!-- elabftw is the one example that has backslashes -->
+       <InternalSignature ID="400">
         <ByteSequence Reference="Variable">
          <SubSequence Position="1">
-         <Sequence>74 74 70 73 3a 5c 2f 5c 2f 77 33 69 64 2e 6f 72 67 5c 2f 72 6f 5c 2f 63 72 61 74 65 5c 2f</Sequence>
+          <Sequence>'https:\/\/w3id.org\/ro\/crate\/1.'(31|32)</Sequence>
          </SubSequence>
         </ByteSequence>
-        </InternalSignature> -->
+       </InternalSignature>
+
       </InternalSignatureCollection>
      </BinarySignatures>
     </File>

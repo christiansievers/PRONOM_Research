@@ -7,7 +7,8 @@ Electronic Laboratory Notebook (ELN)
 
 **Version number**
 
-n/a
+- 1.1 (TBC, all files created before the initial stable ELN Specification 1.2+20260923 was published)
+- 1.2
 
 **PUID**
 
@@ -31,20 +32,27 @@ Aggregate
 
 **Vendor**
 
-The specification is freely available via https://github.com/TheELNConsortium/TheELNFileFormat. It follows the RO-Crate specification https://www.researchobject.org/ro-crate/specification.html, which specifies that 
+The specification follows the RO-Crate specification https://www.researchobject.org/ro-crate/specification.html. It is freely available via https://github.com/TheELNConsortium/TheELNFileFormat and specifies that 
 
 - the file must be a zip container
-- the zip file contains a variably named directory, which must contain a file called `ro-crate-metadata.json` 
-- which must contain the string `https://w3id.org/ro/crate/1.1`
+- the zip file must contain a variably named directory, which must contain a file called `ro-crate-metadata.json` 
+- which must contain the string `https://w3id.org/ro/crate/`
 
-The difference to other zipped RO-Crate packages is that
+In Version 1.1 the difference to other zipped RO-Crate packages (which may also contain a variably named directory, in which the file called `ro-crate-metadata.json` is located) is that
 
 - the files must have the extension `eln`
+
+Version 1.2 additionally introduces an ID:
+
+- The ID is `https://purl.archive.org/purl/elnconsortium/eln-spec/1.2+20260923` which allows a strong signature.
+- TBC if the signature should omit the last part `+20260923` as this may change often.
 
 The file format is supported by a variety of applications, see the ELN specification above.
 
 
 **File format identification signatures**
+
+Version 1.1:
 
 ```xml
 <ContainerSignature Id="1000" ContainerType="ZIP">
@@ -55,9 +63,17 @@ The file format is supported by a variety of applications, see the ELN specifica
      <BinarySignatures>
       <InternalSignatureCollection>
        <InternalSignature ID="300">
-        <ByteSequence Reference="BOFoffset">
-            <SubSequence MinFragLength="11.5" Position="1" SubSeqMaxOffset="32" SubSeqMinOffset="9">
-          <Sequence>'https://w3id.org/ro/crate/'</Sequence>
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+           <Sequence>'https://w3id.org/ro/crate/1.'(31|32)</Sequence>
+         </SubSequence>
+        </ByteSequence>
+       </InternalSignature>
+       <!-- one example file (created by elabftw) has backslashes -->
+       <InternalSignature ID="400">
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+          <Sequence>'https:\/\/w3id.org\/ro\/crate\/1.'(31|32)</Sequence>
          </SubSequence>
         </ByteSequence>
        </InternalSignature>
@@ -68,6 +84,31 @@ The file format is supported by a variety of applications, see the ELN specifica
   </ContainerSignature>
  ```
  
+ Version 1.2:
+
+ ```xml
+ <ContainerSignatures>
+  <ContainerSignature Id="1002" ContainerType="ZIP">
+   <Description>Electronic Laboratory Notebook (ELN)</Description>
+   <Files>
+    <File>
+     <Path>*/ro-crate-metadata.json</Path>
+     <BinarySignatures>
+      <InternalSignatureCollection>
+       <InternalSignature ID="300">
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+          <Sequence>'https://purl.archive.org/purl/elnconsortium/eln-spec/1.2'</Sequence>
+         </SubSequence>
+        </ByteSequence>
+       </InternalSignature>
+      </InternalSignatureCollection>
+     </BinarySignatures>
+    </File>
+   </Files>
+  </ContainerSignature>
+ </ContainerSignatures>
+ ``` 
 
 
 **Relevant links, documentation, extra information**
@@ -81,8 +122,6 @@ Landesinitiative LZV.nrw / Hochschulbibliothekszentrum NRW (hbz)
 
 # open questions
 
-- [ ] This signature works but it could be called 'weak' as there will be other RO-Crate packages that have been zipped. The signature could add the condition that the file must have the .eln extension (which wouldn't be ideal). 
-- [ ] I'm in touch with the ELN consortium about the problem that the only way to distinguish other zipped RO-Crate packages from ELN is the extension.  The consortium is considering adding an identifier (https://github.com/TheELNConsortium/TheELNFileFormat/issues/161), but that would only work forward, once the various applications that can write ELN implement this. Should we wait for the new version of the spec, or should this signature be submitted?
-
-- [ ] one of the example files (examples/elabftw/export.eln) contains backslashes in the string: `https:\/\/w3id.org\/ro\/crate\/`. Should I remove ByteSequence, so that it only looks for the file? Or add another ByteSequence with this string, i.e. in hex so that it's less troublesome `68 74 74 70 73 3a 5c 2f 5c 2f 77 33 69 64 2e 6f 72 67 5c 2f 72 6f 5c 2f 63 72 61 74 65 5c 2f` ?
+- [ ] This signature works but it could be called 'weak' as there will be other RO-Crate packages that have been zipped. Should the signature could add the condition that the file must have the .eln extension?
+- [ ] The ELN consortium has recently added an identifier (https://github.com/TheELNConsortium/TheELNFileFormat/issues/161). In my understanding the previous versions of the file should be called v1.1, but this is TBC with the consortium.
 
