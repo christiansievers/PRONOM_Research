@@ -99,12 +99,20 @@
 
 <FileFormatCollection>
 
-  <FileFormat ID="1" Name="Electronic Laboratory Notebook (ELN)" PUID="dev/1" Version="1.0" MIMEType="application/vnd.eln+zip">
-     <!-- not sure if I need the below line-->
+  <FileFormat ID="1" Name="Electronic Laboratory Notebook (ELN)" PUID="dev/1" Version="1.1" MIMEType="application/vnd.eln+zip">
     <InternalSignatureID>1</InternalSignatureID>
     <Extension>eln</Extension>
-    <!-- do I need the below line? somewhere? -->
-    <!-- <HasPriorityOverFileFormatID>382</HasPriorityOverFileFormatID> -->
+    <!-- I think I need the below line-->
+    <HasPriorityOverFileFormatID>382</HasPriorityOverFileFormatID>
+  </FileFormat>
+
+  <FileFormat ID="2" Name="Electronic Laboratory Notebook (ELN)" PUID="dev/2" Version="1.2" MIMEType="application/vnd.eln+zip">
+    <InternalSignatureID>2</InternalSignatureID>
+    <Extension>eln</Extension>
+    <!-- version 1.2 is more specific and has a stronger signature so should have priority -->
+    <HasPriorityOverFileFormatID>1</HasPriorityOverFileFormatID>
+    <!-- I think I need the below line-->
+    <HasPriorityOverFileFormatID>382</HasPriorityOverFileFormatID>
   </FileFormat>
 
    <FileFormat ID="767" Name="OLE2 Compound Document Format" PUID="fmt/111">

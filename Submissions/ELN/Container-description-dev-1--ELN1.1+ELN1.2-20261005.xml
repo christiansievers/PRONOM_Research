@@ -2,15 +2,13 @@
 <ContainerSignatureMapping SchemaVersion="1.0" SignatureVersion="1788511934">
  
  <ContainerSignatures>
-  <ContainerSignature Id="1000" ContainerType="ZIP">
+  <ContainerSignature Id="1001" ContainerType="ZIP">
    <Description>Electronic Laboratory Notebook (ELN) Format</Description>
    <Files>
     <File>
      <Path>*/ro-crate-metadata.json</Path>
      <BinarySignatures>
       <InternalSignatureCollection>
-
-
 <!-- all ro-crate-metadata.json files have this string, ending either on 1.1 or 1.2-->
        <InternalSignature ID="300">
         <ByteSequence Reference="Variable">
@@ -19,8 +17,7 @@
          </SubSequence>
         </ByteSequence>
        </InternalSignature>
-
-<!-- elabftw is the one example that has backslashes -->
+<!-- one example file (created by elabftw) has backslashes -->
        <InternalSignature ID="400">
         <ByteSequence Reference="Variable">
          <SubSequence Position="1">
@@ -28,7 +25,27 @@
          </SubSequence>
         </ByteSequence>
        </InternalSignature>
+      </InternalSignatureCollection>
+     </BinarySignatures>
+    </File>
+   </Files>
+  </ContainerSignature>
 
+  <ContainerSignature Id="1002" ContainerType="ZIP">
+   <Description>Electronic Laboratory Notebook (ELN)</Description>
+   <Files>
+    <File>
+     <Path>*/ro-crate-metadata.json</Path>
+     <BinarySignatures>
+      <InternalSignatureCollection>
+       <InternalSignature ID="300">
+        <ByteSequence Reference="Variable">
+         <SubSequence Position="1">
+          <Sequence>'https://purl.archive.org/purl/elnconsortium/eln-spec/1.2'</Sequence>
+         </SubSequence>
+        </ByteSequence>
+       </InternalSignature>
+       <!-- one of the example files (examples/elabftw/export.eln) contains backslashes in files prior to v1.2, probably also in 1.2 - need to add a Bytesequence for that when elabftw can supply sample file -->
       </InternalSignatureCollection>
      </BinarySignatures>
     </File>
@@ -36,8 +53,17 @@
   </ContainerSignature>
  </ContainerSignatures>
 
+
+
+
+
+
+
  <FileFormatMappings>
-  <FileFormatMapping signatureId="1000" Puid="dev/1"></FileFormatMapping>
+    <!-- Electronic Laboratory Notebook (ELN) 1.1-->
+  <FileFormatMapping signatureId="1001" Puid="dev/1"></FileFormatMapping>
+    <!-- Electronic Laboratory Notebook (ELN) 1.2-->
+  <FileFormatMapping signatureId="1002" Puid="dev/2"></FileFormatMapping>
  </FileFormatMappings>
 
  <TriggerPuids>
