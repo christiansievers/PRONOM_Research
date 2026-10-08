@@ -45,7 +45,7 @@ In Version 1.1 the difference to other zipped RO-Crate packages (which may also 
 Version 1.2 additionally introduces an ID:
 
 - The ID is `https://purl.archive.org/purl/elnconsortium/eln-spec/1.2+20260923` which allows a strong signature.
-- TBC if the signature should omit the last part `+20260923` as this may change often.
+- TBC if the signature should omit the last part `+20260923` as this may change often, or only changes together with the previous part.
 
 The file format is supported by a variety of applications, see the ELN specification above.
 
@@ -122,6 +122,6 @@ Landesinitiative LZV.nrw / Hochschulbibliothekszentrum NRW (hbz)
 
 # open questions
 
-- [ ] This signature works but it could be called 'weak' as there will be other RO-Crate packages that have been zipped. Should the signature could add the condition that the file must have the .eln extension?
-- [ ] The ELN consortium has recently added an identifier (https://github.com/TheELNConsortium/TheELNFileFormat/issues/161). In my understanding the previous versions of the file should be called v1.1, but this is TBC with the consortium.
+- [ ] Version 1.1: This signature works but it could be called 'weak' as there will be other RO-Crate packages where folders containing the ro-crate-metadata.json file have been zipped, resulting in false posiives. (Unfortunately the .eln extension can not be used as part of the signature.) Should it still be submitted as ELN v1.1? Alternatively, does it make more sense to submit an entry for RO-Crate, and in the description for that entry explain that there is a subtype with the file extension .eln, together with a link to the ELN spec? (Assuming that RO-Crate could legitimately be called a file format. Apparently it's more a way to structure a range of files and folders, so that the sometimes large binary files within can be worked on, without necessarily putting them into a container. ELN on the other hand is explictly designed to be an exchange and storage format.)
+- [ ] The ELN consortium has recently added an identifier (https://github.com/TheELNConsortium/TheELNFileFormat/issues/161), and this first stable version is called 1.2. In my understanding (all?) previous versions of the file should be called v1.1. I'll try to confirm this with the consortium. Also the question how often they expect the format spec to change, and if the date stamp at the end changes independently (and more often) or always together with the 1.x version number.
 
